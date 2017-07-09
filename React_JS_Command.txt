@@ -1,0 +1,11 @@
+Hare Krishna
+
+React JS Commands
+
+1. npm install create-react-app -g : this command is used only once to isntall create-react-app command,and -g means its global
+
+2. create-react-app <project_name> : this command is used to create react project .
+
+3. npm start : After creating project move to project dir and then run this command , this will start webpack 
+
+Note : if any application is running on port 3000 then it will ask you to run project on different port after confirmation it start on 3001 port.
