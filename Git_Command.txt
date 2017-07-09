@@ -15,4 +15,7 @@ Git Commands
 	Example	: git commit -m ‘This is first commit’
 
 5. Git Push : This command is used to push our changes from local Repository to Origin.
-	Example : git push   
+	Example : git push
+
+6. Git Pull : This command is used to pull changes from Remote/Origin Repository to local Repository.
+	Example : git pull
