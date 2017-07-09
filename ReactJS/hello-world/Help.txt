@@ -11,6 +11,7 @@
 // at the end of class we need to call render method of ReactDom class.
 // parameter of render methord of ReactDom are : class name in following syntax <className/>
 // second paramter of render method is refrence object of HTML object where we want to display data on screen/UI.
+//Example "ReactDom.render(< Final />, document.getElementById('root'))"
 // some keyword are reservesed which we cann't use in jsx for example insted of using class we need to use className.
 // we can write java script also but we need to write in curly braces "{}".
 // in class we can create seprate method also and we can easily call these method in render method.
