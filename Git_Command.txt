@@ -1,0 +1,18 @@
+Hare Krishna
+
+Git Commands 
+
+1. Git clone <URL of Repository>
+	Example git clone https://github.com/dhamijashashank/React_JS.git
+
+2. Git Status : To check status and also provide example command how to proceed further
+	Example git status 
+
+3. Git add : This command is used before commit command, to add our changes so that we can proceed further.- - all means that we want to include all changes.
+	Example: git add - -all
+
+4. Git Commit :	This command is used to commit our local changes to local Repository.we can add comments along with this command in single quotes.
+	Example	: git commit -m ‘This is first commit’
+
+5. Git Push : This command is used to push our changes from local Repository to Origin.
+	Example : git push   
