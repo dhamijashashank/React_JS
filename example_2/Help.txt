@@ -50,6 +50,10 @@ For Example_2
                     </ul>
                 )   
             }
+*   Actually we have Array/List of lastName which is store in state and it is accessed in render method s shown in above example , for this we need java sscript and we 
+    are not able to use any type of loop in java script here {}, so we have to use map and pass one by one value 
+
+*   We need to pass unique key also other wise it will display warning message , remember key should be unique in above case we have unique value i.e we use it as key.
 
 
 
