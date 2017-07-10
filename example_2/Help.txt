@@ -22,7 +22,7 @@
 
 
 For Example_2 
-
+*   For This check Index_1.js
 *   Its example of state and prop 
 *   Example of state is 
     this.state = {
@@ -32,3 +32,7 @@ For Example_2
 *   Example of props is 
      <ToDoItem details={this.state.lastName}/>  from the class where we define state variable syntax <className parameter_name={this.state.variable_name}> 
        {this.props.details}                     In Another class where we want to access these variable syntax {this.props.parameter_name}
+*   For This check Index.js
+*   Above example show if we want to pass only 1 parameter /1 variable , but if we want to pass more then one parameter then we have to use below approach:
+*   Example for more then one parameter
+

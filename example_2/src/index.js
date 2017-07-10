@@ -7,14 +7,21 @@ class ToDoList extends React.Component{
     constructor(){
         super();
         this.state = {
-            lastName: 'Thanks krishna for help'
+            lastName: ['Thanks krishna for help','krishna','hare krishna']
         }
     }
 
 render(){
-    return <ul>
-            <ToDoItem deta={this.state.lastName}/>
-          </ul>
+    return (
+        <ul>
+            {
+                this.state.lastName.map(function(name){
+                return <ToDoItem key={name} deta={name}/>
+                }
+                )
+            }
+            </ul>
+        )   
     }
 }
 class ToDoItem extends React.Component {
