@@ -34,5 +34,22 @@ For Example_2
        {this.props.details}                     In Another class where we want to access these variable syntax {this.props.parameter_name}
 *   For This check Index.js
 *   Above example show if we want to pass only 1 parameter /1 variable , but if we want to pass more then one parameter then we have to use below approach:
-*   Example for more then one parameter
+*   Example for more then one parameter is
+            this.state = {
+            lastName: ['Thanks krishna for help','krishna','hare krishna']   (we can define array in constructor of parnet class and access in other class)
+
+        render(){
+            return (
+                <ul>
+                    {
+                        this.state.lastName.map(function(name){
+                        return <ToDoItem key={name} deta={name}/>
+                        }
+                        )
+                    }
+                    </ul>
+                )   
+            }
+
+
 
