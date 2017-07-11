@@ -56,4 +56,46 @@ For Example_2
 *   We need to pass unique key also other wise it will display warning message , remember key should be unique in above case we have unique value i.e we use it as key.
 
 
+For Example_3 {}
+
+#  If you want to use this keyword in any other function then you have to bind this keyword otherwise its value changed
+    Example of binding this keyword : this.ChangeStatus = this.ChangeStatus.bind(this); syntax : this.clasName = this.clasName.bind(this);
+
+#  Example of declaring state level array of object
+            this.state = {
+            tasks: [{
+               name:"Bulk Milk",
+               completed:"false" 
+            },
+            {
+               name:"Bulk Test",
+               completed:"false" 
+            },
+            {
+               name:"Alone Testing",
+               completed:"false" 
+            }
+            ]
+        }
+#  If we want to change value of state variable then follow below approach, you need to use setState method for this purpose.
+        ChangeStatus(index){
+       var tasks = this.state.tasks;
+       var task = tasks[index];
+       task.completed = !task.completed;
+       this.setState({
+           tasks : tasks
+       })
+       console.log(this.state.tasks[index])
+    }
+
+#  If we want to access this to another class then you have to use fat arrow function 
+    Example:
+                        this.state.tasks.map((task , index) => {
+                return <ToDoItem key={task.name} clickHandler={this.ChangeStatus} index={index} deta={task} />
+  
+#  Example of Onclick Method and fat arrow function are as follow 
+    onClick={ () => {
+            this.props.clickHandler(this.props.index)
+        }} className ={this.props.deta.completed ?'completed' :' '}
+
 
