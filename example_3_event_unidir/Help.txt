@@ -1,0 +1,59 @@
+// Its mandatory that class name should start with caps letter 
+// import React from 'react';
+// import ReactDom from 'react-dom'
+// in return we are using some tags of html but not all tags of html 
+// in return the outer most tag must be present only single time , if we write it more then 1 then it throw exception.
+//some of working tags are <p> , <div> , <h1> .....<hn> , <section> etc 
+// class is reserved keyword for cs6 only
+// we have to extend React.Component with every component.
+// One file can contain many classes.
+// its mandatory that every class has render() method and it will return html
+// at the end of class we need to call render method of ReactDom class.
+// parameter of render methord of ReactDom are : class name in following syntax <className/>
+// second paramter of render method is refrence object of HTML object where we want to display data on screen/UI.
+//Example "ReactDom.render(< Final />, document.getElementById('root'))"
+// some keyword are reservesed which we cann't use in jsx for example insted of using class we need to use className.
+// we can write java script also but we need to write in curly braces "{}".
+// in class we can create seprate method also and we can easily call these method in render method.
+// In Curly braces {} we can call any onther method of same class using this keyword.
+// we can use javascript exression only we are not able to use loop / condition like for loop , while loop , if condition etc.
+// we can also use of constructor in class , but  it should be before any method.
+// in constructor super should be placed at first line so that this component is able to extend React.Component.
+
+
+For Example_2 
+*   For This check Index_1.js
+*   Its example of state and prop 
+*   Example of state is 
+    this.state = {
+            lastName: 'Thanks krishna for help'
+        }
+*   In state we can store value in variable and can access its value in other function of class (using java script) and even outside of the class (using props)
+*   Example of props is 
+     <ToDoItem details={this.state.lastName}/>  from the class where we define state variable syntax <className parameter_name={this.state.variable_name}> 
+       {this.props.details}                     In Another class where we want to access these variable syntax {this.props.parameter_name}
+*   For This check Index.js
+*   Above example show if we want to pass only 1 parameter /1 variable , but if we want to pass more then one parameter then we have to use below approach:
+*   Example for more then one parameter is
+            this.state = {
+            lastName: ['Thanks krishna for help','krishna','hare krishna']   (we can define array in constructor of parnet class and access in other class)
+
+        render(){
+            return (
+                <ul>
+                    {
+                        this.state.lastName.map(function(name){
+                        return <ToDoItem key={name} deta={name}/>
+                        }
+                        )
+                    }
+                    </ul>
+                )   
+            }
+*   Actually we have Array/List of lastName which is store in state and it is accessed in render method s shown in above example , for this we need java sscript and we 
+    are not able to use any type of loop in java script here {}, so we have to use map and pass one by one value 
+
+*   We need to pass unique key also other wise it will display warning message , remember key should be unique in above case we have unique value i.e we use it as key.
+
+
+
