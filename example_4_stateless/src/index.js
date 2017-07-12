@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import ToDoItem from './ToDoItem.js'
+//import ToDoItem from './component/ToDoItem.js'
+import ToDoItem from './component/ToDoItem.js';
 
 class ToDoList extends React.Component{
 

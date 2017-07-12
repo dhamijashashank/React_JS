@@ -101,3 +101,12 @@ For Example_3 {}
 
 For Example_4 {Stateless function}
 
+#   This example will demonstrate how to use stateless function.
+#   If there is no state in that function then we make it as stateless function as it will render component only.{basic condition for stateless function}
+    For Example: in index.js class ToDoList has there own state then we didn't make it as stateless but in class ToDoItem there is no state then we make it as stateless.
+#   How to create stateless function:
+        * No class keyword is used , insted of that const keyword is used.
+        * example const Class_Name = () => {}
+        * we use flat arrow function in it.
+        * in this component render method is not there , only return is there which will return jsx.
+        
