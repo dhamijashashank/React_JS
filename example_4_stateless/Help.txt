@@ -98,3 +98,6 @@ For Example_3 {}
             this.props.clickHandler(this.props.index)
         }} className ={this.props.deta.completed ?'completed' :' '}
 
+
+For Example_4 {Stateless function}
+
