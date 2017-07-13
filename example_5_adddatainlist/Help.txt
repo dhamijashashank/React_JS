@@ -110,3 +110,19 @@ For Example_4 {Stateless function}
         * we use flat arrow function in it.
         * in this component render method is not there , only return is there which will return jsx.
         
+For Example_5 ADD Data to List
+
+#   If user want to add new value in state then we need to push value in it.
+    Example of puch :
+     tasks.push({
+            name:currenttask,
+            completed:false 
+        })
+#   Difference between let and var 
+    let allows you to declare variables that are limited in scope to the block, statement, or expression on which it is used. This is unlike the var keyword, 
+    which defines a variable globally, or locally to an entire function regardless of block scope
+
+#   If there is form and Submit button and we want to execute in both case :1st on click on Submit button (its default) , 2nd on press of ennter key , then add onSubmit={props.addTask}
+    in form tag like :<form onSubmit={props.addTask}>.....</form>
+
+#   If we are using stateless function insted of normal class then also we need to import React from 'react' even there is no use of this import.
