@@ -1,0 +1,226 @@
+// Its mandatory that class name should start with caps letter 
+// import React from 'react';
+// import ReactDom from 'react-dom'
+// in return we are using some tags of html but not all tags of html 
+// in return the outer most tag must be present only single time , if we write it more then 1 then it throw exception.
+//some of working tags are <p> , <div> , <h1> .....<hn> , <section> etc 
+// class is reserved keyword for cs6 only
+// we have to extend React.Component with every component.
+// One file can contain many classes.
+// its mandatory that every class has render() method and it will return html
+// at the end of class we need to call render method of ReactDom class.
+// parameter of render methord of ReactDom are : class name in following syntax <className/>
+// second paramter of render method is refrence object of HTML object where we want to display data on screen/UI.
+//Example "ReactDom.render(< Final />, document.getElementById('root'))"
+// some keyword are reservesed which we cann't use in jsx for example insted of using class we need to use className.
+// we can write java script also but we need to write in curly braces "{}".
+// in class we can create seprate method also and we can easily call these method in render method.
+// In Curly braces {} we can call any onther method of same class using this keyword.
+// we can use javascript exression only we are not able to use loop / condition like for loop , while loop , if condition etc.
+// we can also use of constructor in class , but  it should be before any method.
+// in constructor super should be placed at first line so that this component is able to extend React.Component.
+
+
+For Example_2 
+*   For This check Index_1.js
+*   Its example of state and prop 
+*   Example of state is 
+    this.state = {
+            lastName: 'Thanks krishna for help'
+        }
+*   In state we can store value in variable and can access its value in other function of class (using java script) and even outside of the class (using props)
+*   Example of props is 
+     <ToDoItem details={this.state.lastName}/>  from the class where we define state variable syntax <className parameter_name={this.state.variable_name}> 
+       {this.props.details}                     In Another class where we want to access these variable syntax {this.props.parameter_name}
+*   For This check Index.js
+*   Above example show if we want to pass only 1 parameter /1 variable , but if we want to pass more then one parameter then we have to use below approach:
+*   Example for more then one parameter is
+            this.state = {
+            lastName: ['Thanks krishna for help','krishna','hare krishna']   (we can define array in constructor of parnet class and access in other class)
+
+        render(){
+            return (
+                <ul>
+                    {
+                        this.state.lastName.map(function(name){
+                        return <ToDoItem key={name} deta={name}/>
+                        }
+                        )
+                    }
+                    </ul>
+                )   
+            }
+*   Actually we have Array/List of lastName which is store in state and it is accessed in render method s shown in above example , for this we need java sscript and we 
+    are not able to use any type of loop in java script here {}, so we have to use map and pass one by one value 
+
+*   We need to pass unique key also other wise it will display warning message , remember key should be unique in above case we have unique value i.e we use it as key.
+
+
+For Example_3 {}
+
+#  If you want to use this keyword in any other function then you have to bind this keyword otherwise its value changed
+    Example of binding this keyword : this.ChangeStatus = this.ChangeStatus.bind(this); syntax : this.clasName = this.clasName.bind(this);
+
+#  Example of declaring state level array of object
+            this.state = {
+            tasks: [{
+               name:"Bulk Milk",
+               completed:"false" 
+            },
+            {
+               name:"Bulk Test",
+               completed:"false" 
+            },
+            {
+               name:"Alone Testing",
+               completed:"false" 
+            }
+            ]
+        }
+#  If we want to change value of state variable then follow below approach, you need to use setState method for this purpose.
+        ChangeStatus(index){
+       var tasks = this.state.tasks;
+       var task = tasks[index];
+       task.completed = !task.completed;
+       this.setState({
+           tasks : tasks
+       })
+       console.log(this.state.tasks[index])
+    }
+
+#  If we want to access this to another class then you have to use fat arrow function 
+    Example:
+                        this.state.tasks.map((task , index) => {
+                return <ToDoItem key={task.name} clickHandler={this.ChangeStatus} index={index} deta={task} />
+  
+#  Example of Onclick Method and fat arrow function are as follow 
+    onClick={ () => {
+            this.props.clickHandler(this.props.index)
+        }} className ={this.props.deta.completed ?'completed' :' '}
+
+
+For Example_4 {Stateless function}
+
+#   This example will demonstrate how to use stateless function.
+#   If there is no state in that function then we make it as stateless function as it will render component only.{basic condition for stateless function}
+    For Example: in index.js class ToDoList has there own state then we didn't make it as stateless but in class ToDoItem there is no state then we make it as stateless.
+#   How to create stateless function:
+        * No class keyword is used , insted of that const keyword is used.
+        * example const Class_Name = () => {}
+        * we use flat arrow function in it.
+        * in this component render method is not there , only return is there which will return jsx.
+        
+For Example_5 ADD Data to List
+
+#   If user want to add new value in state then we need to push value in it.
+    Example of puch :
+     tasks.push({
+            name:currenttask,
+            completed:false 
+        })
+#   Difference between let and var 
+    let allows you to declare variables that are limited in scope to the block, statement, or expression on which it is used. This is unlike the var keyword, 
+    which defines a variable globally, or locally to an entire function regardless of block scope
+
+#   If there is form and Submit button and we want to execute in both case :1st on click on Submit button (its default) , 2nd on press of ennter key , then add onSubmit={props.addTask}
+    in form tag like :<form onSubmit={props.addTask}>.....</form>
+
+#   If we are using stateless function insted of normal class then also we need to import React from 'react' even there is no use of this import.
+
+#   The preventDefault() method cancels the event if it is cancelable, meaning that the default action that belongs to the event will not occur.
+
+        For example, this can be useful when:
+
+        Clicking on a "Submit" button, prevent it from submitting a form
+        Clicking on a link, prevent the link from following the URL
+
+#   Explination of flat arrow function:
+    ES6 fat arrow functions have a shorter syntax compared to function expressions and lexically bind the this value. Arrow functions are always anonymous and 
+    effectively turn function (arguments) { expression } into arguments => expression. If using an expression after an arrow, the return is implicit, so no return 
+    is required.
+
+    Example :
+    JavaScript Snippet
+        'use strict';
+        // Filter an array for only odd numbers
+        let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+        // Before...
+        let es5OddNumbers = numbers.filter(function(number) {
+        return number % 2;
+        });
+        ChromeSamples.log(es5OddNumbers);
+
+        // After...
+        let es6OddNumbers = numbers.filter(number => number % 2);
+        ChromeSamples.log(es6OddNumbers);
+
+        // Parens are optional depending on the number of arguments:
+        let square = x => x * x;
+        ChromeSamples.log(square(10));
+
+        let add = (a, b) => a + b;
+        ChromeSamples.log(add(3, 4));
+
+        // `return` is implied if using an expression after an arrow.
+        let developers = [{name: 'Rob'}, {name: 'Jake'}];
+        // Before...
+        let es5Output = developers.map(function(developer) {
+        return developer.name;
+        });
+        ChromeSamples.log(es5Output);
+
+        // After...
+        let es6Output = developers.map(developer => developer.name);
+        ChromeSamples.log(es6Output);
+
+        // Fat arrows change how `this` is handled.
+
+        // Before...
+        // In ES5, `bind()` or var that = this; are necessary as functions
+        // create their own `this`. We need to store the parent `this` in
+        // a variable that can be referenced in the callback or take care
+        // of binding ourselves.
+        function CounterES5() {
+        this.seconds = 0;
+        window.setInterval(function() {
+            this.seconds++;
+        }.bind(this), 1000); // or }.bind(this), 1000) and skip that = this
+        }
+
+        var counterA = new CounterES5();
+        window.setTimeout(function() {
+        ChromeSamples.log(counterA.seconds);
+        }, 1200);
+
+        // After...
+        // ES6 Arrows instead bind `this` to the immediate enclosing
+        // lexical scope:
+        function CounterES6() {
+        this.seconds = 0;
+        window.setInterval(() => this.seconds++, 1000);
+        }
+
+        let counterB = new CounterES6();
+        window.setTimeout(() => ChromeSamples.log(counterB.seconds), 1200);
+
+
+
+
+For Example_6 Delete Data from List
+
+#   If we want to delete any value from state then we have to use splice function like below 
+    syntax : variable.splice(index , number_of_items_to_delete)
+    Example : 
+        let tasks = this.state.tasks    (copy state variable in local variable)
+        tasks.splice(index,1)           (splice i.e. delete specific value )
+
+        this.setState({                 (Replcace local variable to state variable)
+            tasks
+        })
+
+#   stopPropagation function : 
+        The event.stopPropagation() method stops the bubbling of an event to parent elements, preventing any parent event handlers from being executed.
+
+        Tip: Use the event.isPropagationStopped() method to check whether this method was called for the event.
+    Example : event.stopPropagation();
