@@ -19,3 +19,9 @@ Git Commands
 
 6. Git Pull : This command is used to pull changes from Remote/Origin Repository to local Repository.
 	Example : git pull
+
+7. Git Clone for single branch only 
+	Git actually allows you to clone only one branch, for example:
+
+	Example : git clone -b mybranch --single-branch git://sub.domain.com/repo.git
+	Explination : git clone learned --single-branch option to limit cloning to a single branch (surprise!); tags that do 			not point into the history of the branch are not fetched.
