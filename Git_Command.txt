@@ -25,7 +25,7 @@ Git Commands
 
 	Example : git clone -b mybranch --single-branch git://sub.domain.com/repo.git
 	Explination : git clone learned --single-branch option to limit cloning to a single branch (surprise!); tags that do 			not point into the history of the branch are not fetched.
-
+	
 8. Git New Branch command :
 	# git clone <URL of Repository> 
 	# git checkout -b new_branch_name existing-branch
