@@ -8,8 +8,8 @@ Git Commands
 2. Git Status : To check status and also provide example command how to proceed further
 	Example git status 
 
-3. Git add : This command is used before commit command, to add our changes so that we can proceed further.- - all means that we want to include all changes.
-	Example: git add - -all
+3. Git add : This command is used before commit command, to add our changes so that we can proceed further.-- all means that we want to include all changes.
+	Example: git add --all
 
 4. Git Commit :	This command is used to commit our local changes to local Repository.we can add comments along with this command in single quotes.
 	Example	: git commit -m ‘This is first commit’
@@ -34,3 +34,7 @@ Git Commands
 	# git clone https://github.com/dhamijashashank/React_JS.git
 	# git checkout -b aem_contentvalidator_master contentvalidator_master
 	# git push --set-upstream origin aem_contentvalidator_master
+	
+9. Git Command to discard local changes and take fresh copy from git to local
+	(use "git checkout -- <file>..." to discard changes in working directory)
+
