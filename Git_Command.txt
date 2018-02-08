@@ -37,4 +37,9 @@ Git Commands
 	
 9. Git Command to discard local changes and take fresh copy from git to local
 	(use "git checkout -- <file>..." to discard changes in working directory)
+	
+10. Git Switch Branch : This command is used to switch to selected branch from another branch.
+	Example : right now we are on master and then we want to switch to another branch then use below command
+	Syntax : git checkout <branch_Name> 
+	Command: git checkout feature/Backend-API
 
