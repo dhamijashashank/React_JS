@@ -42,4 +42,14 @@ Git Commands
 	Example : right now we are on master and then we want to switch to another branch then use below command
 	Syntax : git checkout <branch_Name> 
 	Command: git checkout feature/Backend-API
+	
+11. Git Ignore : if you want to ignore some file or folder to commit , then follow below approach
+	Example : in node js when you run npm install then it create one folder for dependencies "node_modules" which we 	 	  didn't want to commit "https://help.github.com/articles/ignoring-files/"
+	Steps	: * In Terminal, navigate to the location of your Git repository.
+		  * Enter "touch .gitignore" to create a .gitignore file.
+		  * open .gitignore file and add file_name or folder_name.
+		  * after putting file_name/folder_name it will never ask to push/ commit that into git.
+		  
+12. Git diff : If you want to check difference before commit any file to origin then use below command.
+	command : git diff <File_Name>
 
